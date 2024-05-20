@@ -11,4 +11,7 @@ def scrape(url: str) -> str:
     description = description[: -len("...more")]
     image = teste.css(".thumbnail img::attr(src)").get()
 
-    return f"{title}, {price}, {description}, {'http://books.toscrape.com/catalogue/'+image}"
+    return (
+        f"{title}, {price}, {description}, "
+        f"http://books.toscrape.com/catalogue/{image}"
+    )
